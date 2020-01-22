@@ -1,0 +1,19 @@
+local myTable = {
+
+}
+function TestFunction()
+
+for k , v in pairs (gmcp.Char.Defences.List) do
+ 
+      -- myTable[k] = gmcp.Char.Defences.List[k]
+       -- table.foreach(mytable, k)
+      --display(k .. "  " .. v)
+      table.insert(myTable, k)
+      
+      echo("This is my table" .. myTable)
+  end  
+
+  --local showStuff = table.concat(myTable, "\n")
+  --display(showStuff)
+
+end
