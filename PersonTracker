@@ -1,0 +1,42 @@
+--The first function will update people that enter the room. GMCP gmcp.Room.Players
+
+function updatepeople()
+	my_people = {}
+	for k,v in pairs(gmcp.Room.Players) do
+		table.insert(my_people,gmcp.Room.Players[k].name)
+	end
+	whohere = table.concat(my_people,"\n")
+	PeopleShow:Echo(whohere)
+end
+
+--The second function will add players using GMCP gmcp.Room.AddPlayer
+
+function addpeople()
+	table.insert(my_people,gmcp.Room.AddPlayer.name)
+	whohere = table.concat(my_people,"\n")
+	PeopleShow:Echo(whohere)
+end
+
+--The third function will remove player from room. GMCP gmcp.Room.RemovePlayer
+
+function removepeople()
+	listRemove(my_people,gmcp.Room.RemovePlayer)
+	whohere = table.concat(my_people,"\n")
+	PeopleShow:Echo(whohere)
+end
+
+
+
+--This code will display the data to the screen
+
+local xx,yy = getMainWindowSize()
+clearWindow("PeopleShow")
+
+peoplewindow = Geyser.MiniConsole:new({
+name = "PeopleShow",
+x = xx-560, y = 230,
+width = 140, height = 200,
+})
+setFont("PeopleShow", "Ubuntu Mono")
+setFontSize("PeopleShow", 12)
+setBackgroundColor("PeopleShow", 0, 0, 0, 0)
